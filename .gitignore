@@ -1,0 +1,49 @@
+# 📦 Node.js
+**/node_modules/            # 모든 node_modules 폴더 무시
+npm-debug.log*              # npm 로그
+yarn-debug.log*
+yarn-error.log*
+
+# 📁 로그 및 빌드 아웃풋
+logs/
+*.log
+dist/
+build/
+coverage/
+
+# 🌐 환경 변수 (백엔드용)
+okssenger-back/.env
+okssenger-back/.env.local
+okssenger-back/.env.*.local
+
+# 🧪 테스트 커버리지 및 임시 파일
+.nyc_output/
+jest-html-reporters-*.html
+*.swp
+*.tmp
+*.temp
+
+# ⚙️ 시스템 / IDE 설정
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# 🛢️ DB 파일 및 덤프
+*.sqlite
+*.db
+dump/
+
+# ⚡ 캐시 디렉토리
+.cache/
+.vite/
+.next/
+.babel-cache/
+out/
+
+# 🔒 민감 정보 파일 (비밀번호 암호화 관련)
+okssenger-back/encryptPassword.js
