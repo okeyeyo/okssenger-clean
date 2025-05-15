@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/App.css"; // 스타일 파일 import
 import FriendItem from "../components/FriendItem.jsx";
-import { friends } from "../data/friends";
+import { friends } from "../data/friends.js";
 import {
   FaSearch,
   FaUserPlus,

@@ -88,8 +88,8 @@ export default function LoginPage() {
 
         <input className="login-form__btn" type="submit" value="로그인" />
         <div className="login-form__a">
-          <a href="#">회원가입</a>
-          <a href="#">비밀번호 찾기</a>
+          {/* <a href="#">회원가입</a>
+          <a href="#">비밀번호 찾기</a> */}
         </div>
       </form>
     </main>
