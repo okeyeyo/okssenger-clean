@@ -1,0 +1,27 @@
+body.friends-bg {
+  background-color: var(--background-color);
+}
+
+.frineds-screen {
+  overflow-y: auto;
+}
+
+.frineds-screen__list {
+  margin-top: 25px;
+  border-top: var(--stick-border);
+  padding-top: 15px;
+}
+
+.friends-screen__list-channel,
+.friends-screen__friends-list {
+  color: var(--gray-color);
+}
+
+.friends-screen__list-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  margin: 10px 0px;
+  border-top: 1px solid var(--gray-color);
+  color: var(--gray-color);
+}

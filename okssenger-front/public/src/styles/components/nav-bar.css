@@ -1,0 +1,30 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f9f9fa;
+  padding: 20px 10%;
+  box-sizing: border-box; /* 박스 사이즈가 커지지 않게 함 즉, padding 값을 무시하는 것. 저게 없으면 padding값을 인식해서 해당 값만큼 크기가 늘어남*/
+  border-top: 1px solid rgba(121, 121, 121, 0.3);
+  background-color: var(--background-color);
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  position: relative; /* nav__notification의 부모 */
+  color: #2e363e;
+}
+
+.nav__notification {
+  position: absolute; /* 가장 가까운 부모를 기준으로 옮기기 때문에 해당되는 부분에 부모를 정해줘야 함 */
+  left: 15px;
+  top: -7px;
+}
+
+.nav__btn {
+  display: flex;
+  align-items: center;
+}
