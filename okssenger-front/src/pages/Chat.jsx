@@ -30,13 +30,15 @@ export default function Chat() {
       <div className="chat-screen_top">
         <span className="chat-friend_name">{user}</span>
       </div>
-      <ul>
-        {msgs.map((m) => (
-          <li key={m.chat_id}>
-            <strong>{m.sender_name}</strong>: {m.message}
-          </li>
-        ))}
-      </ul>
+      <div className="chat-screen_body">
+        <ul>
+          {msgs.map((m) => (
+            <li key={m.chat_id}>
+              <strong>{m.sender_name}</strong>: {m.message}
+            </li>
+          ))}
+        </ul>
+      </div>
       <form onSubmit={send}>
         <input
           value={input}
