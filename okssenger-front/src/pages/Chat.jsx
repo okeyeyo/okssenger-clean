@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchChats, postChat } from "../api/chatApi.js";
+import { FaArrowAltCircleUp } from "react-icons/fa"; // FontAwesome 아이콘 import
 
 export default function Chat() {
   const { user } = useParams(); // URL 파라미터로 받은 친구 이름
@@ -43,9 +44,11 @@ export default function Chat() {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="메시지 입력..."
+          placeholder="메시지 입력"
         />
-        <button type="submit">전송</button>
+        <span role="button">
+          <FaArrowAltCircleUp size={28} color="#f66845" />
+        </span>
       </form>
     </div>
   );
