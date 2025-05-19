@@ -2,28 +2,32 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchChats, postChat } from "../api/chatApi.js";
-import { FaArrowAltCircleUp } from "react-icons/fa"; // FontAwesome 아이콘 import
+import { FaArrowUp } from "react-icons/fa"; // FontAwesome 아이콘 import
 
 export default function Chat() {
   const { user } = useParams(); // URL 파라미터로 받은 친구 이름
   const [msgs, setMsgs] = useState([]);
-  const [input, setInput] = useState("");
+  const [text, setText] = useState("");
 
   // 화면에 들어올 때 + user가 바뀔 때마다 채팅 내역 불러오기
   useEffect(() => {
     fetchChats(user).then(setMsgs).catch(console.error);
   }, [user]);
 
-  const send = async (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+  // 메시지 전송 함수
+  const handleSend = async () => {
+    if (!text.trim()) return;
     try {
-      const newChat = await postChat(user, input);
-      setMsgs((m) => [...m, { ...newChat, sender_name: "Me" }]);
-      setInput("");
+      const newChat = await postChat(user, text);
+      setMsgs((prev) => [...prev, { ...newChat, sender_name: "Me" }]);
+      setText("");
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") handleSend();
   };
 
   return (
@@ -40,16 +44,32 @@ export default function Chat() {
           ))}
         </ul>
       </div>
-      <form onSubmit={send}>
+      <div className="chat-send">
         <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="메시지 입력"
+          className="chat-send__comment"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder=" 메시지 입력"
         />
-        <span role="button">
-          <FaArrowAltCircleUp size={28} color="#f66845" />
+
+        {/* 전송 아이콘: span + role/button으로 접근성 확보 */}
+        <span
+          className="chat-send__trans"
+          role="button"
+          tabIndex={0}
+          onClick={handleSend}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleSend();
+            }
+          }}
+          aria-label="메시지 전송"
+        >
+          <FaArrowUp size={20} color="white" />
         </span>
-      </form>
+      </div>
     </div>
   );
 }
