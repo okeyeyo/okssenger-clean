@@ -38,8 +38,9 @@ export default function Chat() {
       <div className="chat-screen_body">
         <ul>
           {msgs.map((m) => (
-            <li key={m.chat_id}>
-              <strong>{m.sender_name}</strong>: {m.message}
+            <li key={m.chat_id} className="chat-screen_body__sender">
+              <span>{m.sender_name}</span>
+              <span>{m.message}</span>
             </li>
           ))}
         </ul>
@@ -67,7 +68,7 @@ export default function Chat() {
           }}
           aria-label="메시지 전송"
         >
-          <FaArrowUp size={20} color="white" />
+          전송
         </span>
       </div>
     </div>

@@ -15,36 +15,38 @@
   padding: 60px 10px 0px 10px;
 }
 
+.chat-screen_body__sender {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
 .chat-friend_name {
   display: flex;
   justify-content: center;
 }
 
 .chat-send {
+  position: fixed;
+  bottom: 0px;
   width: 100%;
-  height: 32px;
-  padding: 0px 10px;
-  position: relative;
+  height: 100px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
 .chat-send__comment {
-  position: absolute;
-  left: 10px;
-  width: 80%;
-  height: 26px;
-  border-radius: 10px;
+  width: 100%;
+  height: 70px;
   outline: none;
 }
 
 .chat-send__trans {
-  position: absolute;
-  right: 10px;
-  width: 26px;
-  height: 26px;
-  background-color: var(--basic-color);
-  border-radius: 50%;
+  width: 100%;
+  height: 30px;
+  background-color: var(--brown-color);
   display: flex;
   justify-content: center;
   align-items: center;
