@@ -20,6 +20,7 @@ export default function LoginPage() {
       navigate("/friends");
     } catch (err) {
       console.error(err);
+      alert(err.message);
     }
   };
 
